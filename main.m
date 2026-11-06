@@ -11,11 +11,15 @@ blank_Space = 1;
 die_One = 859;
 die_Two = 860;
 die_Three = 861;
+
+random_Die = 
+click_screen = 
+
 game_scene = simpleGameEngine('retro_pack.png',3,6,5,[245,245,245]);
 world = [blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space; blank_Space letter_R letter_O letter_L letter_L blank_Space; blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space];
 
-while gameOver ~= 1
-
+for click = 1
+  [row_clicked,col_clicked] = getMouseInput(game_scene);
 
 
   drawScene(game_scene,world)
