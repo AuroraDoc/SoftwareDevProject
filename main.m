@@ -2,7 +2,7 @@ clear
 clc
 close all
 
-gameOn = 1;
+gameOn = true;
 
 %Sprites
 letter_R = 1016;
