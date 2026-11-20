@@ -42,11 +42,11 @@ function dieNum = getDieNum()
     random_num = rand();
 
     if(random_num < 0.33)
-        curr_die = 1;
+        dieNum = 1;
     elseif(random_num < 0.66)
-        curr_die = 2;
+        dieNum = 2;
     else
-        curr_die = 3;
+        dieNum = 3;
     end
 end
 
