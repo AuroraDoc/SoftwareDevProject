@@ -27,7 +27,8 @@ while gameOn
     [row_clicked,col_clicked] = getMouseInput(game_scene);
 
     if(row_clicked == 2 && col_clicked < 5)
-        curr_die = rollDie();
+        currDieNum = getDieNum();
+        curr_die = translateDie(currDieNum);
         world(2, 6) = curr_die;
     end
 
@@ -36,16 +37,28 @@ while gameOn
 end
 
 
-%Rolling the die
-function curr_die = rollDie()
-    die_One = 859;
-    die_Two = 860;
-    die_Three = 861;
+%Rolling the number
+function dieNum = getDieNum()
     random_num = rand();
 
     if(random_num < 0.33)
-        curr_die = die_One;
+        curr_die = 1;
     elseif(random_num < 0.66)
+        curr_die = 2;
+    else
+        curr_die = 3;
+    end
+end
+
+%Going from die number to dieSprite
+function curr_die = translateDie(number)
+    die_One = 859;
+    die_Two = 860;
+    die_Three = 861;
+
+    if(number == 1)
+        curr_die = die_One;
+    elseif(number == 2)
         curr_die = die_Two;
     else
         curr_die = die_Three;
