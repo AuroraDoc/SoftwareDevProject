@@ -19,10 +19,11 @@ purp_topL = 203;
 purp_topR = 204;
 purp_botL = 235;
 purp_botR = 236;
+player_P = 137;
 
+game_scene = simpleGameEngine('retro_packV4.png',16,16,5,[245,245,245]);
 
-game_scene = simpleGameEngine('retro_packV3.png',16,16,5,[245,245,245]);
-world = [blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+worldbg = [blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
     blank_Space purp_topL purp_topR oran_Whole purp_Whole gren_Whole blue_topL blue_topR blank_Space;
     blank_Space purp_botL purp_botR blank_Space blank_Space blank_Space blue_botL blue_botR blank_Space;
     blank_Space gren_Whole blank_Space blank_Space blank_Space blank_Space blank_Space oran_Whole blank_Space;
@@ -32,5 +33,21 @@ world = [blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space
     blank_Space blue_botL blue_botR gren_Whole purp_Whole oran_Whole purp_botL purp_botR blank_Space;
     blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space];
 
-drawScene(game_scene, world);
+world = [blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;
+    blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space blank_Space;];
 
+drawScene(game_scene,worldbg, world);
+
+function direction = getDirection(currentQuarter)
+    
+    direction = 1;
+
+    if currentQuarter > 1 && currentQuarter < 3
+        
